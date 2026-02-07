@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Rose Day ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle, #ff758c, #ff4b6e);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      max-width: 350px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #ff4b6e;
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .rose {
+      font-size: 50px;
+      cursor: pointer;
+      margin: 20px 0;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .secret {
+      display: none;
+      color: #ff4b6e;
+      font-weight: 600;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      display: none; /* fallback if needed */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Happy Rose Day 🌹</h1>
+    <h2>My Love, YOUR_HUSBAND_NAME ❤️</h2>
+    <p>Hey handsome, this rose is for the man who still makes my heart race 😏</p>
+
+    <div class="rose" onclick="revealLove()">🌹</div>
+
+    <div class="secret" id="secretMessage">
+      YOUR_HUSBAND_NAME, I miss your arms, your smile, and the way you look at me 😘💋  
+      Hurry home… your wife has plans 🔥❤️
+    </div>
+
+    <!-- Audio -->
+    <audio id="loveAudio">
+      <source src="romantic.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function revealLove() {
+      // Show secret message
+      document.getElementById("secretMessage").style.display = "block";
+
+      // Play audio safely on mobile
+      const audio = document.getElementById("loveAudio");
+      audio.play().catch(() => {
+        // fallback if autoplay blocked
+        alert("Tap the rose again to hear my message 🎵💖");
+      });
+    }
+  </script>
+
+</body>
+</html>
+
